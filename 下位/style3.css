@@ -1,0 +1,43 @@
+body {
+    background-color: #398D95;
+}
+
+#container {
+	height: 1000px;
+	width: 1000px;/*中央の幅の指定*/
+	margin: 0 auto;
+    padding: 0.1px;
+	background: #fff;/*中央の背景を白にする指定*/
+}
+
+
+h2 {
+    margin: 0 200px;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #398D95;
+    color: #ffffff;
+    position: relative;
+}
+
+h2::before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border-bottom: solid 15px transparent;
+    border-right: solid 20px #959E9B;
+}
+
+h3{ 
+    margin:0 200px;
+    margin-top: 40px;
+    padding: 5px 10px;
+    border-left: 6px solid #398D95;
+}
+
+p{
+    margin:0 200px;
+    margin-top:15px;
+}
+

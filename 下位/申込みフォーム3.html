@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style4.css" type="text/css">
+
+<html>
+
+    <head>
+        <title>申込み</title>
+    </head>
+
+<body>
+    <h1>体験入学の申込み</h1>
+
+    <form name="information" onsubmit="return checkText()">
+        <dl>
+            <dt>体験希望日(3日・10日・21日)</dt>
+                <dd>
+                    <input type="text" name="day">
+                    <div class="mozi">日</div>
+                </dd>
+            <dt>参加人数</dt>
+                <dd>
+                    <select name="people">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </dd>
+            <dt>連絡先（携帯番号)</dt>
+                <dd>
+                    <input type="text" name="tell">  
+                </dd>
+            
+            <dt>体験入学をどこで知った？</dt>
+                <dd>
+                    <label><input type="checkbox" id="category1" value="パンフレット">パンフレット</label>
+                    <label><input type="checkbox" id="category2" value="ホームページ">ホームページ</label>
+                    <label><input type="checkbox" id="category3" value="風の噂">風の噂</label>
+                </dd>
+        </dl>
+            <p class="submit"><input type="submit" name="next" value="✕" onclick="return checkText()"></p>
+            <p class="submit"><input type="reset" name="clear" value="◯" onclick="clearText()"></p>
+
+        
+            <div class = consent>
+            <dd>
+                <label><input type="checkbox" id="category4">申込み内容に同意する</label>
+
+            </dd>
+            <dd>
+                <label><input type="checkbox" id="joke" name="joke" checked>連絡先へのいたずら電話を許可する。</label>
+            </dd>
+            </div>
+        </form>
+
+
+
+    <script>
+           //10秒ごとにアラートを表示する
+            var alertmsg = function(){
+                passtime=passtime+10;
+                alert(passtime+"秒経過 早く入力してください");
+                setTimeout(alertmsg, interval);
+            }
+            var passtime = 0;
+            const interval = 10000; 
+            setTimeout(alertmsg, interval);  
+
+        
+            //入力内容のチェック
+            function checkText() {
+            var day = document.information.day.value;  //体験入学希望日
+            var num_people = document.information.people.value;  //参加人数
+            var num_tell = document.information.tell.value;  //携帯番号
+
+            //体験入学希望日
+            if (day.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+                // 全角文字の時の処理を記述
+                alert("日付は半角で入力してください")
+                return false;
+            } else if(day == 3) {
+                // 半角文字の時の処理 3日ならOK
+            } else if(day == 10) {
+                // 半角文字の時の処理を記述 10日ならOK
+            } else if(day == 21) {
+                // 半角文字の時の処理を記述 21日ならOK
+            }
+            else{
+                //上記以外の日程であればNO
+                alert("体験入学を行っていない日です。") 
+                return false;
+            }
+
+            //参加人数
+            if (num_people==1){
+                alert("1人で参加はできません。必ず保護者と参加してください。")
+                return false;
+            } else if(num_people > 2){
+                alert("感染拡大防止のため、3人以上での参加はお控えください。")
+                return false;                
+            }
+            else{
+                //OK
+            }
+
+            //連絡先
+            if (!num_tell.match(/^(0[5-9]0-[0-9]{4}-[0-9]{4})$/)) {
+                alert("連絡先が間違っています。◯◯◯-◯◯◯◯-◯◯◯◯")
+                return false;
+            } else {
+            }
+            //どこで知ったか？
+            if (category1.checked){
+            }
+            if (category2.checked){
+            }
+            if (category3.checked){
+                alert('風の噂とはなんですか？');
+                return false;
+            }    
+
+            //同意判定
+            if (category4.checked){
+            }  
+            else{
+                alert('申込み内容に同意してください');
+                return false;
+
+            }
+            //移動先
+            window.open('./申込み完了.html', '_blank');
+        }
+
+        //1➡01などに変換、2桁はただ文字列にする
+        function affixZero(int) {
+            if (int < 10) int = "0" + int;
+            return "" + int;
+        }
+
+        function clearText() {
+            alert('入力内容を削除しました')
+        }
+
+
+    </script>
+
+</body>
+</html>

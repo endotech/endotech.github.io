@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+body{
+
+    background-image: url(https://th.bing.com/th/id/R.bdb6758792bfeb340fc99732d0100fd4?rik=F43IMlO%2b9Qwedg&riu=http%3a%2f%2f4.bp.blogspot.com%2f-hqOJRaqWyX8%2fUEGKDUDMa7I%2fAAAAAAAAClU%2fIG-5Ul7tdrg%2fw1200-h630-p-k-no-nu%2f%e8%bf%91%e4%bb%a3%e3%83%86%e3%82%af%e3%83%8e%e3%83%ad%e3%82%b8%e3%83%bc%e3%82%92%e8%a1%a8%e7%8f%be%e3%81%97%e3%81%9f%e8%83%8c%e6%99%af%2bModern%2btech%2bbackground%2bvector.jpg&ehk=3u2Uvp6q5d2KbV%2bzrLLg7COtIg%2fXEG4CZQtLVlQMIm0%3d&risl=&pid=ImgRaw&r=0); 
+}
+
+h1{
+    text-align:center;
+    font-size: 30px;
+    background-color: white;
+    margin: 100px 210px 10px 210px;
+    border: 1px solid #afadad;
+    border-radius: 1px;
+    padding: 1px;
+}
+
+dl{
+    width: 800px;
+    background: white;  
+    margin:auto auto auto auto;
+    border-top:1px solid #cccccc;
+    border-right:1px solid #cccccc;
+    border-left:1px solid #cccccc
+}
+
+
+dl dt{
+    float: left;
+    padding: 1em;
+    font-size: 20px;
+    margin-left:20px;
+}
+
+dl dd{
+    border-bottom: 1px solid #cccccc;
+    margin:0;
+    padding: 1em 0 1em 18em;
+    font-size: 20px;
+    
+}
+
+p{
+    float:left;
+    margin:10px;
+}
+
+input[name="next"]{
+    margin-left:390px;
+    padding: 20px 100px;
+    background:#CD5C5C;
+    color:#ffffff;
+    font-size:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+input[name="clear"]{
+    margin-left:10px;
+    padding: 20px 100px;
+    background: #2E8B57;
+    color:#ffffff;
+    font-size:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+input[name="day"]{
+    width: 30px;
+}
+
+.mozi{
+    display:inline-block;
+    font-size:14px;
+    margin-left:0px;
+}
+
+.consent{
+    margin-top:300px;
+    font-size:20px;
+}
+
+

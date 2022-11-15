@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="申込みフォームデザイン.css" type="text/css">
+
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見学申込み</title>
+    
+<script type="text/javascript">
+<!--
+
+function check () {
+var Name = document.loginForm.name.value;
+var Sei = document.loginForm.sei.value;
+var Birthday = document.loginForm.birthday.value;
+var Mail = document.loginForm.mail.value;
+var Mail2 = document.loginForm.mail2.value;
+
+if ( Name == "" ) {
+alert ( "ユーザ名を入力して下さい。" );
+document.loginForm.sei.focus();
+return false;
+}
+    
+
+const name = document.getElementById('name');
+  if (name.value.indexOf('　') < 0) {
+    alert('苗字と名前は全角スペースで区切ってください。');
+    return;
+  }
+    
+if ( Sei == "" ) {
+    alert ( "性別を入力して下さい。" );
+document.loginForm.sei.focus();
+return false;
+}
+    
+if(Sei != "おとこ"&&"おんな"){
+    alert ( "性別は（おとこ）か（おんな）で入力してください" ); 
+document.loginForm.sei.focus();
+return false;
+}
+    
+if ( Birthday == "" ) {
+alert ( "誕生日を入力してください" );
+document.loginForm.birthday.focus();
+return false;
+}
+    
+if ( Mail == "" ) {
+alert ( "メールアドレスを入力してください" );
+document.loginForm.mail.focus();
+return false;
+}
+    
+if ( Mail2 == Mail ) {
+alert ( "メールアドレスが違います" );
+document.loginForm.mail2.focus();
+return false;
+}
+
+}
+
+//-->
+</script>    
+
+</head>
+<body>
+<h1>オープンキャンパス申し込み</h1>
+    <form class="aaa" action="#" method="post" name="loginForm" onSubmit="return check();">
+        <p>お名前：<br>
+        <input type="text" name="name" id="name"></p>
+        <p>男性ですか？女性ですか？：<br>
+        <input type="text" name="sei"></p>
+        <p>生年月日：<br>
+        <input type="date" name="birthday">
+        <p>メールアドレス：<br>
+        <input type="email" name="mail" pattern="^[a-zA-Z0-9]+$"></p>
+        <p>メールアドレス(確認用)：<br>
+        <input type="email" name="mail2" pattern="mail"></p>
+        <p>連絡事項：<br>
+        <textarea name="comment" cols="30" rows="5" ></textarea></p>
+        <p><input type="submit" value="➡">　　　<input type="submit"  onclick="history.back()" value="⇐"></p>
+    </form>
+</body>
+</html>

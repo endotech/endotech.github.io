@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style4.css" type="text/css">
+
+<html>
+
+    <head>
+        <title>申込み</title>
+    </head>
+
+<body>
+    <h1>お問い合わせ</h1>
+
+    <form name="information" onsubmit="return checkText()">
+        <dl>
+            <dt>お問い合わせの内容</dt>
+                <dd>
+                    <label><input type="checkbox" id="category1" value="体験入学">体験入学</label>
+                    <label><input type="checkbox" id="category2" value="資料請求">資料請求</label>
+                    <label><input type="checkbox" id="category3" value="クレーム">クレーム</label>
+                </dd>
+            <dt>お名前</dt>
+                <dd>
+                    <input type="text" name="name">
+                </dd>
+            <dt>ふりがな</dt>       
+                <dd>
+                    <input type="text" name="kana">
+                </dd>
+            <dt>年齢</dt>
+                <dd>
+                    <select name="age">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                </dd>
+            <dt>生年月日</dt>
+                <dd>
+                    <input type="date" name="birthday">  
+                </dd>
+        </dl>
+            <p class="submit"><input type="submit" name="next" value="✕" onclick="return checkText()"></p>
+            <p class="submit"><input type="reset" name="clear" value="◯" onclick="clearText()"></p>
+        </form>
+
+
+
+    <script>
+           //10秒ごとにアラートを表示する
+            var alertmsg = function(){
+                passtime=passtime+10;
+                alert(passtime+"秒経過 早く入力してください");
+                setTimeout(alertmsg, interval);
+            }
+            var passtime = 0;
+            const interval = 10000; 
+            setTimeout(alertmsg, interval);  
+
+        
+            //入力内容のチェック
+            function checkText() {
+            let checkcategory = document.getElementById('category1');
+            var text = document.information.name.value;
+            var birthday = document.information.birthday.value;
+            var age = document.information.age.value;
+
+            // birth[0]→year, birth[1]→month, birth[2]→day
+            var  birth = birthday.split('-');
+            var _birth = parseInt("" + birth[0] + birth[1] + birth[2]);
+            var  today = new Date();
+            var _today = parseInt("" + today.getFullYear() + affixZero(today.getMonth() + 1) + affixZero(today.getDate()));
+            //誕生日から計算した年齢
+            var cal_age=parseInt((_today - _birth) / 10000);
+
+            if (category1.checked){
+                alert('本当ですか？');
+            }
+
+            if (category2.checked){
+                alert('学校体験に参加してください');
+                return false;
+            }
+
+            if (category3.checked){
+                alert('受け付けません');
+                return false;
+            }      
+
+            if(text.length === 0) {
+                alert('入力が正しくありません');
+                return false;
+            }
+
+            if(age != cal_age){
+                alert('入力が正しくありません')
+                return false;
+            }
+
+            //移動先
+            //location.href = "./申込みフォーム.html3";
+            window.open('./申込みフォーム3.html', '_blank');
+        }
+
+        //1➡01などに変換、2桁はただ文字列にする
+        function affixZero(int) {
+            if (int < 10) int = "0" + int;
+            return "" + int;
+        }
+
+        function clearText() {
+            alert('入力内容を削除しました')
+        }
+
+
+    </script>
+
+</body>
+</html>

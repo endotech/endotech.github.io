@@ -1,0 +1,20 @@
+
+
+
+p.side_text {
+    display: inline-block;
+    width:70%;
+    margin-left: 20px;
+    margin-top: 40px;
+    vertical-align: top;
+    font-weight: bold;
+    letter-spacing: normal; /* 文字間を元に戻す */
+    white-space: normal; /* 自動で折り返し(元に戻す) */
+  }
+
+  figure.picture {
+    display: inline-block;
+    letter-spacing: normal; /* 文字間を元に戻す */
+    white-space: normal; /* 自動で折り返し(元に戻す) */
+    margin-top: 50px;
+  }
